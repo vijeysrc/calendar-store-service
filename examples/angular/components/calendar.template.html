@@ -1,0 +1,30 @@
+<table class="table table-bordered calendar-component">
+    <thead>
+        <tr>
+            <th ng-hide="$ctrl.adjacent" colSpan="7" class="text-center">{{$ctrl.instance.base | date:"MMM yyyy"}}</th>
+            <th ng-show="$ctrl.adjacent" colSpan="7" class="text-center">{{$ctrl.instance.structures.adjacents[$ctrl.adjacent].base | date:"MMM yyyy"}}</th>
+        </tr>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-hide="$ctrl.adjacent" ng-repeat="row in $ctrl.instance.structures.matrix track by $index">
+            <td class="text-center cursor-pointer" ng-click="$ctrl.goTo('chosen', cell.date)" ng-repeat="cell in row" ng-class="{'text-muted': (cell.month === 'prev' || cell.month === 'next'), 'text-primary': !(cell.month === 'prev' || cell.month === 'next'), 'bg-danger': cell.today, 'date-chosen': cell.chosen}">
+                    {{cell.day}}
+            </td>
+        </tr>
+
+        <tr ng-show="$ctrl.adjacent" ng-repeat="row in $ctrl.instance.structures.adjacents[$ctrl.adjacent].matrix track by $index">
+            <td class="text-center cursor-pointer" ng-click="$ctrl.goTo('chosen', cell.date)" ng-repeat="cell in row" ng-class="{'text-muted': (cell.month === 'prev' || cell.month === 'next'), 'text-primary': !(cell.month === 'prev' || cell.month === 'next'), 'bg-danger': cell.today, 'date-chosen': cell.chosen}">
+                    {{cell.day}}
+            </td>
+        </tr>
+    </tbody>
+</table>

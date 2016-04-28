@@ -1,0 +1,12 @@
+body {
+    padding-top: 60px;
+    font-size: 10px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.calendar-component .date-chosen {
+    outline: 4px solid maroon;
+}

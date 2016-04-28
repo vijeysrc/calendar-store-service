@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-4">
+        <a href="#" class="btn btn-default btn-block btn-sm" ng-click="$ctrl.goTo('month', 'prev')">
+            &larr; Month
+        </a>
+        <a href="#" class="btn btn-primary btn-block btn-sm" ng-click="$ctrl.goTo('year', 'prev')">
+            &larr; Year
+        </a>
+    </div>
+    <div class="col-sm-4 text-center small">
+        <strong>Chosen Date</strong>
+        <br/>
+        {{$ctrl.instance.chosen | date:"mediumDate"}}
+        <br/>
+        <strong>Today</strong>
+        <br/>
+        {{$ctrl.today | date:"mediumDate"}}
+    </div>
+    <div class="col-sm-4">
+        <a href="#" class="btn btn-default btn-block btn-sm" ng-click="$ctrl.goTo('month', 'next')">
+            Month &rarr;
+        </a>
+        <a href="#" class="btn btn-primary btn-block btn-sm" ng-click="$ctrl.goTo('year', 'next')">
+            Year &rarr;
+        </a>
+    </div>
+</div>

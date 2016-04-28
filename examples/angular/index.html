@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Calendar Example in AngularJs</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="angular.js"></script>
+    <script src="calendar-service.js"></script>
+</head>
+<body ng-app="app">
+    <div class="container" ng-controller="MainCtrl as vm">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        Calendars - AngularJs
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <ul class="nav nav-tabs">
+                <li ng-click="vm.changeTab($event, i)" role="presentation" ng-class="{active: (i === vm.active)}" ng-repeat="(i, tab) in vm.tabs">
+                    <a href="#"><strong>{{tab.title}}</strong></a>
+                </li>
+            </ul>
+            <br/>
+            <div>
+                <ng-include src="vm.tabs[vm.active].content"></ng-include>
+            </div>
+        </div>
+    </div>
+<script src="main.js"></script>
+<script src="services/calendar-store.factory.js"></script>
+<script src="components/calendar.component.js"></script>
+<script src="components/nav-controls.component.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "name": "calendar-store-service",
+  "version": "1.0.0",
+  "description": "A JavaScript store service - provides data store for Calendar widgets/components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vijeysrc/calendar-store-service"
+  },
+  "keywords": [],
+  "author": "Vijey N <vijeyswamy@yahoo.com> (http://github.com/vijeysrc)",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "lint": "eslint src reactjs-example",
+    "serve:react": "webpack-dev-server --config react-example.webpack.config.js -d --progress --color --watch",
+    "serve:angular": "node serve-angular.js",
+    "build:service": "cross-env SCRIPT_NAME=service webpack --config build.webpack.config.js",
+    "build:store": "cross-env SCRIPT_NAME=store webpack --config build.webpack.config.js",
+    "build:formatter": "cross-env SCRIPT_NAME=formatter webpack --config build.webpack.config.js",
+    "build": "npm run clean && npm run build:service && npm run build:store && npm run build:formatter"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "babel-core": "^6.5.1",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.2",
+    "babel-polyfill": "^6.7.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "cross-env": "^1.0.7",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.8.0",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-react": "^4.2.3",
+    "file-loader": "^0.8.5",
+    "react-hot-loader": "^1.3.0",
+    "rimraf": "^2.5.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
